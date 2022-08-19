@@ -3,7 +3,7 @@ terraform {
 }
 
 dependency "aws_vpc_production_use1" {
-  config_path = "${get_repo_root()}/aws/production/us-east-1/vpc"
+  config_path = "${get_repo_root()}/aws/production/us-east-1/iangrunt/vpc"
 
   mock_outputs_allowed_terraform_commands = ["validate"]
   mock_outputs = {
@@ -14,16 +14,11 @@ dependency "aws_vpc_production_use1" {
   }
 }
 
-locals {
-  project_vars = read_terragrunt_config(find_in_parent_folders("project.hcl"))
-}
-
 inputs = {
   input = {
     namespace               = "iangrunt"
     environment             = "prod"
-    project                 = local.project_vars.locals.project_id
-    aws_vpc_production_use1 = dependency.aws_vpc_production_use1.outputs
+    aws_vpc_production_use1 = "Hello from AWS! ${dependency.aws_vpc_production_use1.outputs.id}"
   }
 }
 
