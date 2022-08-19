@@ -1,39 +1,43 @@
 # multi-cloud-terragrunt-filesystem
 
-An example of how to layout a Terragrunt repository to support multi-cloud in a single folder. 
+An example of how to layout a Terragrunt repository to support multi-cloud in a single folder.
 
 ```
-$ tree
+$ tree --filesfirst
 .
+├── terragrunt.hcl
 ├── aws
+│   ├── providers.hcl
 │   ├── development
 │   │   └── us-east-2
 │   └── production
+│       ├── account.hcl
 │       ├── us-east-1
-│       │   ├── eks
-│       │   │   └── terragrunt.hcl
 │       │   ├── region.hcl
-│       │   └── vpc
-│       │       └── terragrunt.hcl
+│       │   └── iangrunt
+│       │       ├── current.hcl
+│       │       ├── eks
+│       │       │   └── terragrunt.hcl
+│       │       └── vpc
+│       │           └── terragrunt.hcl
 │       └── us-west-2
 └── gcp
     ├── data-science-projects
     │   ├── project-alpha
     │   └── project-gamma
     └── sre-projects
-        ├── project-delta
-        │   ├── aws-data
-        │   │   ├── README.md
-        │   │   └── terragrunt.hcl
-        │   ├── project.hcl
-        │   └── vpc
-        │       └── terragrunt.hcl
-        └── project-epsilon
+        └── project-delta
+            ├── project.hcl
+            ├── aws-data
+            │   ├── README.md
+            │   └── terragrunt.hcl
+            └── vpc
+                └── terragrunt.hcl
 ```
 
 ## How to use
 ```
-$ terragrunt run-all apply                 
+$ terragrunt run-all apply
 INFO[0000] The stack at /Users/gruntwork/terragrunt-examples/multi-cloud will be processed in the following order for command apply:
 Group 1
 - Module /Users/gruntwork/terragrunt-examples/multi-cloud/aws/production/us-east-1/vpc
