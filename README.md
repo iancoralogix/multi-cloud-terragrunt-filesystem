@@ -5,8 +5,6 @@ An example of how to layout a Terragrunt repository to support multi-cloud in a 
 ```
 $ tree
 .
-├── LICENSE
-├── README.md
 ├── aws
 │   ├── development
 │   │   └── us-east-2
@@ -31,4 +29,17 @@ $ tree
         │   └── vpc
         │       └── terragrunt.hcl
         └── project-epsilon
+```
+
+## How to use
+```
+$ terragrunt run-all apply                 
+INFO[0000] The stack at /Users/gruntwork/terragrunt-examples/multi-cloud will be processed in the following order for command apply:
+Group 1
+- Module /Users/gruntwork/terragrunt-examples/multi-cloud/aws/production/us-east-1/vpc
+- Module /Users/gruntwork/terragrunt-examples/multi-cloud/gcp/sre-projects/project-delta/vpc
+
+Group 2
+- Module /Users/gruntwork/terragrunt-examples/multi-cloud/aws/production/us-east-1/eks
+- Module /Users/gruntwork/terragrunt-examples/multi-cloud/gcp/sre-projects/project-delta/aws-data
 ```
