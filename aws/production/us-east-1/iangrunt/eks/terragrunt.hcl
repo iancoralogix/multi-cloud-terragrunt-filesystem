@@ -16,8 +16,13 @@ include "providers" {
   path = find_in_parent_folders("providers.hcl")
 }
 
+include "current" {
+  path   = find_in_parent_folders("current.hcl")
+  expose = true
+}
+
 inputs = {
-  namespace   = "iangrunt"
-  environment = "prod"
+  namespace   = include.current.locals.namespace
+  environment = include.current.locals.environment
   vpc_id      = dependency.aws_vpc_production_use1.outputs.id
 }
