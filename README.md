@@ -1,5 +1,7 @@
 # multi-cloud-terragrunt-filesystem
 
+An example of how to layout a Terragrunt repository to support multi-cloud in a single folder. 
+
 ```
 $ tree
 .
