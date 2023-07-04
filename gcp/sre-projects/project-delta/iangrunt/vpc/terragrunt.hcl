@@ -1,6 +1,5 @@
 terraform {
-  source = "git@github.com:iangrunt/terraform-fake-modules.git//modules/gcp/vpc?ref=v1.0.0"
-  #  source = "git@github.com:iangrunt/terraform-null-input-output.git?ref=v0.0.1"
+  source = "git::git@github.com:gruntwork-io/terraform-fake-modules.git//modules/gcp/vpc?ref=main"
 }
 
 include "root" {
@@ -26,8 +25,6 @@ locals {
 }
 
 inputs = {
-  #  namespace   = "iangrunt"
-  #  environment = "prod"
   namespace   = include.current.locals.namespace
   environment = include.current.locals.environment
   cidr_block  = "10.2.0.0/16"
