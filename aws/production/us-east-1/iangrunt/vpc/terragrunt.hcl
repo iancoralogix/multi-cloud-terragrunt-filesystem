@@ -1,7 +1,5 @@
 terraform {
-  source = "git@github.com:iangrunt/terraform-fake-modules.git//modules/aws/vpc?ref=v1.0.0"
-  #  source = "/Users/gruntwork/tf/terraform-fake-modules/modules/aws/vpc"
-  #  source = "git@github.com:iangrunt/terraform-null-input-output.git"
+  source = "git::git@github.com:gruntwork-io/terraform-fake-modules.git//modules/aws/vpc?ref=main"
 }
 
 include "root" {
