@@ -1,6 +1,5 @@
 terraform {
-  source = "git@github.com:iangrunt/terraform-fake-modules.git//modules/aws/eks?ref=v1.0.0"
-  #  source = "/Users/gruntwork/tf/terraform-fake-modules/modules/aws/eks"
+  source = "git::git@github.com:gruntwork-io/terraform-fake-modules.git//modules/aws/eks?ref=main"
 }
 
 dependency aws_vpc_production_use1 {
