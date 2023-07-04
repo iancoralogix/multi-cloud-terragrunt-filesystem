@@ -1,5 +1,5 @@
 terraform {
-  source = "git@github.com:iangrunt/terraform-null-input-output.git?ref=v0.0.1"
+  source = "git::git@github.com:iangrunt/terraform-null-input-output.git?ref=v0.0.1"
 }
 
 dependency "aws_vpc_production_use1" {
