@@ -35,6 +35,7 @@ provider "aws" {
       Environment = "${local.team_values_vars.locals.environment}"
       Namespace   = "${local.team_values_vars.locals.namespace}"
       Owner       = "${local.team_values_vars.locals.team_name}"
+      Terraform   = "true"
     }
   }
 
