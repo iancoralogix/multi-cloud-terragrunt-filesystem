@@ -9,146 +9,71 @@ This repository demonstrates the use of Terragrunt in managing a hierarchical, m
 The directory structure is systematically aligned to mirror the cloud setup:
 
 ```shell
-.
-├── LICENSE
-├── README.md
 ├── aws
-│   ├── README.md
 │   ├── organization
 │   │   ├── account_factory
-│   │   │   ├── account_factory.hcl
-│   │   │   └── terragrunt.hcl
-│   │   ├── organization.hcl
 │   │   └── scps
-│   │       ├── scps.hcl
-│   │       └── terragrunt.hcl
-│   ├── providers.hcl
 │   ├── security-ou
 │   │   ├── audit
-│   │   │   └── account.hcl
 │   │   └── security-tooling
-│   │       └── account.hcl
 │   └── workloads-ou
 │       ├── development
-│       │   ├── account.hcl
 │       │   └── us-west-2
-│       │       ├── region.hcl
 │       │       ├── team-a
 │       │       │   ├── aurora
-│       │       │   │   └── terragrunt.hcl
 │       │       │   ├── eks
-│       │       │   │   └── terragrunt.hcl
-│       │       │   ├── team-values.hcl
 │       │       │   └── vpc
-│       │       │       └── terragrunt.hcl
 │       │       └── team-b
 │       │           ├── aurora
-│       │           │   └── terragrunt.hcl
 │       │           ├── eks
-│       │           │   └── terragrunt.hcl
-│       │           ├── team-values.hcl
 │       │           └── vpc
-│       │               └── terragrunt.hcl
-│       ├── ou.hcl
 │       └── production
-│           ├── account.hcl
 │           └── us-east-1
-│               ├── region.hcl
 │               ├── team-a
 │               │   ├── aurora
-│               │   │   └── terragrunt.hcl
 │               │   ├── eks
-│               │   │   └── terragrunt.hcl
-│               │   ├── team-values.hcl
 │               │   └── vpc
-│               │       └── terragrunt.hcl
 │               └── team-b
 │                   ├── aurora
-│                   │   └── terragrunt.hcl
 │                   ├── eks
-│                   │   └── terragrunt.hcl
-│                   ├── team-values.hcl
 │                   └── vpc
-│                       └── terragrunt.hcl
 ├── azure
 │   ├── ai_management_group
 │   │   └── thinkum_subscription
 │   │       ├── data_resource_group
-│   │       │   └── resource_group.hcl
-│   │       ├── subscription.hcl
 │   │       └── ui_resource_group
-│   │           └── resource_group.hcl
-│   ├── providers.hcl
 │   └── tech_management_group
 │       ├── baller_subscription
-│       │   ├── subscription.hcl
 │       │   ├── team-a-resource-group
 │       │   │   ├── ake
-│       │   │   │   └── terragrunt.hcl
 │       │   │   ├── cosmos
-│       │   │   │   └── terragrunt.hcl
-│       │   │   ├── resource-group.hcl
 │       │   │   └── vnet
-│       │   │       └── terragrunt.hcl
 │       │   └── team-b-resource-group
 │       │       ├── ake
-│       │       │   └── terragrunt.hcl
 │       │       ├── cosmos
-│       │       │   └── terragrunt.hcl
-│       │       ├── resource-group.hcl
 │       │       └── vnet
-│       │           └── terragrunt.hcl
-│       ├── gates_subscription
-│       │   ├── subscription.hcl
-│       │   ├── team-a
-│       │   │   ├── ake
-│       │   │   │   └── terragrunt.hcl
-│       │   │   ├── cosmos
-│       │   │   │   └── terragrunt.hcl
-│       │   │   ├── team-values.hcl
-│       │   │   └── vnet
-│       │   │       └── terragrunt.hcl
-│       │   └── team-b
-│       │       ├── ake
-│       │       │   └── terragrunt.hcl
-│       │       ├── cosmos
-│       │       │   └── terragrunt.hcl
-│       │       ├── team-values.hcl
-│       │       └── vnet
-│       │           └── terragrunt.hcl
-│       └── management_group.hcl
-├── gcp
-│   ├── README.md
-│   ├── dba-projects
-│   │   ├── project-alpha
-│   │   │   └── project.hcl
-│   │   ├── project-beta
-│   │   │   └── project.hcl
-│   │   ├── project-delta
-│   │   │   ├── project.hcl
-│   │   │   └── uint-overflow
-│   │   │       ├── cloud-sql
-│   │   │       │   └── terragrunt.hcl
-│   │   │       ├── current.hcl
-│   │   │       └── vpc
-│   │   │           └── terragrunt.hcl
-│   │   └── project-folder.hcl
-│   ├── providers.hcl
-│   └── sre-projects
-│       ├── project-folder.hcl
-│       └── project-o11y
-│           ├── grafana
-│           │   ├── aws-data
-│           │   │   ├── README.md
-│           │   │   └── terragrunt.hcl
-│           │   ├── current.hcl
-│           │   └── vpc
-│           │       └── terragrunt.hcl
-│           └── project.hcl
-└── terragrunt.hcl
-
-65 directories, 71 files
-
+│       └── gates_subscription
+│           ├── team-a
+│           │   ├── ake
+│           │   ├── cosmos
+│           │   └── vnet
+│           └── team-b
+│               ├── ake
+│               ├── cosmos
+│               └── vnet
+└── gcp
+    ├── dba-projects
+    │   ├── project-alpha
+    │   ├── project-beta
+    │   └── project-delta
+    │       └── uint-overflow
+    │           ├── cloud-sql
+    │           └── vpc
+    └── sre-projects
+        └── project-o11y
+            └── grafana
+                ├── aws-data
+                └── vpc
 ```
 
 ## Usage
