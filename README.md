@@ -193,7 +193,7 @@ The execution order is critical as it accounts for dependencies between configur
 
 ## Cross-Cloud Interactions
 
-Cross-cloud interactions, as needed in specific scenarios, are well-facilitated by Terragrunt. This repository features an example of interactions between Google Cloud Platform (GCP) and Amazon Web Services (AWS) under the `project-delta` of the `sre-projects` directory. The specific configuration can be found [here](https://github.com/iangrunt/multi-cloud-terragrunt-filesystem/tree/main/gcp/sre-projects/project-delta/iangrunt/aws-data).
+Cross-cloud interactions, as needed in specific scenarios, are well-facilitated by Terragrunt. This repository features an example of interactions between Google Cloud Platform (GCP) and Amazon Web Services (AWS) under the `project-o11y` of the `sre-projects` directory. The specific configuration can be found [here](https://github.com/iangrunt/multi-cloud-terragrunt-filesystem/tree/main/gcp/sre-projects/project-delta/iangrunt/aws-data).
 
 ## Collaborating with Gruntwork
 
