@@ -8,6 +8,8 @@ This repository demonstrates the use of Terragrunt in managing a hierarchical, m
 
 The directory structure is systematically aligned to mirror the cloud setup:
 
+![layout](img/layout.svg)
+
 ```shell
 .
 ├── LICENSE
