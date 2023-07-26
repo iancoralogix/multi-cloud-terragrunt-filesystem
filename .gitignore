@@ -11,9 +11,6 @@
 # terraform locks
 **/.terraform.lock.hcl
 
-# terraform plan directory from Makefile
-**/terraform.tfplan.d
-
 # terragrunt-cache
 **/.terragrunt-cache/*
 
@@ -21,6 +18,7 @@
 .terraform.lock.hcl
 
 **/.git/
+**/.idea/
 
 # vim
 **/*.swp
