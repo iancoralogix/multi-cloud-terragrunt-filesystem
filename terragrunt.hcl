@@ -4,6 +4,6 @@
 
 locals {
   corporate_level_required_tags = {
-    company_id = "0123456789ABCDEF"
+    CompanyId = "0123456789ABCDEF"
   }
 }

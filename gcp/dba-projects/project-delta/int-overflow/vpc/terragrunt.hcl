@@ -7,9 +7,6 @@ include "root" {
   expose = true
 }
 
-# Automatically generate a provider that points to the correct region.
-# Even if my session has region set to us-west-2, this will launch in
-# us-east-1.
 include "providers" {
   path = find_in_parent_folders("providers.hcl")
 }
@@ -27,6 +24,6 @@ locals {
 inputs = {
   namespace   = include.current.locals.namespace
   environment = include.current.locals.environment
-  cidr_block  = "10.2.0.0/16"
+  cidr_block  = "10.77.0.0/16"
   tags        = local.tags
 }
