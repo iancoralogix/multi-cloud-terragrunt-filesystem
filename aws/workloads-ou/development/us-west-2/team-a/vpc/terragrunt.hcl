@@ -1,5 +1,5 @@
 terraform {
-  source = "git::git@github.com:gruntwork-io/terraform-fake-modules.git//modules/aws/vpc?ref=example"
+  source = "git::git@github.com:gruntwork-io/terraform-fake-modules.git//modules/aws/vpc?ref=v0.0.5"
 }
 
 include "root" {
