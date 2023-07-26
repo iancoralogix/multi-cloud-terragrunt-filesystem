@@ -125,13 +125,13 @@ The directory structure is systematically aligned to mirror the cloud setup:
 │   │   ├── project-beta
 │   │   │   └── project.hcl
 │   │   ├── project-delta
-│   │   │   ├── int-overflow
-│   │   │   │   ├── cloud-sql
-│   │   │   │   │   └── terragrunt.hcl
-│   │   │   │   ├── current.hcl
-│   │   │   │   └── vpc
-│   │   │   │       └── terragrunt.hcl
-│   │   │   └── project.hcl
+│   │   │   ├── project.hcl
+│   │   │   └── uint-overflow
+│   │   │       ├── cloud-sql
+│   │   │       │   └── terragrunt.hcl
+│   │   │       ├── current.hcl
+│   │   │       └── vpc
+│   │   │           └── terragrunt.hcl
 │   │   └── project-folder.hcl
 │   ├── providers.hcl
 │   └── sre-projects
